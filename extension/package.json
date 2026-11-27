@@ -52,7 +52,7 @@
         {
           "name": "query",
           "type": "text",
-          "placeholder": "from:X cats",
+          "placeholder": "Search query",
           "required": true
         }
       ]
