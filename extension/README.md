@@ -1,11 +1,26 @@
 # X Search
 
-Search X posts by word, hashtag, account, date, and engagement, or type your own search query, and open the results on x.com. Posts stay on x.com.
+Search posts on X from Raycast. Type your own search query or fill in Advanced Search, and the results will open on x.com in your browser.
 
-Run **Advanced Search**, fill any fields, and press ⌘↵ (Ctrl+Enter on Windows) to search in your preferred tab, such as **Search in Top**. The search opens in your preferred browser, or in your system browser when none is set. **Copy Query** and **Copy Search Link** are there when the form has something to search. The link opens your preferred tab.
+X Search writes the search link and opens it in your browser. You do not need to connect an account or set an API key to use it. However, you might need to sign in to x.com in your browser to see the results.
 
-Run **Quick Search** to type a search query as you would in X's search box, such as `from:X cats -filter:replies`, and press Enter. It also works as a fallback command for the text in Raycast's root search.
+## Quick Search
 
-X's search results have five tabs: Top, Latest, People, Media, and Lists. Set your **Preferred tab**, Top or Latest, in the extension preferences. Quick Search always opens that tab, and so does Advanced Search's first action. To open another tab for one advanced search, use **Search in** in the action panel (⌘⇧↵, or Ctrl+Shift+Enter on Windows). Set **Preferred browser** in the same preferences. Choose a web browser. Every installed application is listed. Leave it empty to use your system browser.
+Type a query the way you would in X's search box, then press Enter. Plain words work, for example `solar eclipse`, or use X's search operators, such as `"solar eclipse" min_faves:500 filter:media`.
 
-This directory is what ships to the Raycast Store. Tests and maintainer docs live in the [development repository](https://github.com/raulgg/raycast-extension-x-search).
+## Advanced Search
+
+Fill in any fields and search:
+
+- Words: all of these words, an exact phrase, any of these words, none of these words, hashtags, and a language
+- Accounts: posts from an account, in reply to an account, or mentioning one
+- Filters: include, only, or leave out replies and posts with links
+- Engagement: a minimum number of replies, Likes, and reposts
+- Dates: posts published from one day to another, both days included
+
+To open another results tab (Top, Latest, People, Media, or Lists), choose it under the "Search in..." action. Other actions include "Copy Query", which copies the search query the form writes, and "Copy Search Link".
+
+## Preferences
+
+- Preferred tab: Top or Latest. Searches open in this tab unless you pick another in Advanced Search.
+- Preferred browser: the browser that opens your searches. Leave it empty to use your system browser.
