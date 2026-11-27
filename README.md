@@ -4,6 +4,28 @@ Development repository for the X Search Raycast extension.
 
 Advanced Search fills in the same fields as X's advanced search. Quick Search opens a search query as typed. Both open the search on x.com. Results stay on x.com.
 
+## Screenshots
+
+Advanced Search with the Words fields filled in and English as the language.
+
+![Advanced Search with words, an exact phrase, hashtags, and a language](extension/metadata/x-search-1.png)
+
+Accounts and Filters. The search keeps posts from @NASA that mention @NASASun and leaves out replies.
+
+![Advanced Search with From and Mentioning accounts, and replies left out](extension/metadata/x-search-2.png)
+
+Engagement and Dates. The search keeps posts with at least 500 Likes and 50 reposts, published from 6 to 10 April 2026.
+
+![Advanced Search with minimum Likes and reposts, and a From and To date](extension/metadata/x-search-3.png)
+
+Search in opens the advanced search in any results tab.
+
+![The Search in submenu listing Top, Latest, People, Media, and Lists](extension/metadata/x-search-4.png)
+
+Quick Search takes a search query typed as in X's search box.
+
+![Quick Search in Raycast's root search with a search query typed](extension/metadata/x-search-5.png)
+
 ## Two repositories
 
 - **This development repository** holds the extension, its tests, and the contributor docs. Development happens here.
