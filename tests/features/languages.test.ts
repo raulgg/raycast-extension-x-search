@@ -1,0 +1,52 @@
+import { expect, test } from "vitest";
+import { LANGUAGE_OPTIONS } from "@/features/languages";
+
+test("offers Any language first, then each language code with its English name", () => {
+  const options = [...LANGUAGE_OPTIONS];
+
+  expect(options).toEqual([
+    { value: "", title: "Any language" },
+    { value: "ar", title: "Arabic" },
+    { value: "bn", title: "Bangla" },
+    { value: "eu", title: "Basque" },
+    { value: "bg", title: "Bulgarian" },
+    { value: "ca", title: "Catalan" },
+    { value: "zh", title: "Chinese" },
+    { value: "hr", title: "Croatian" },
+    { value: "cs", title: "Czech" },
+    { value: "da", title: "Danish" },
+    { value: "nl", title: "Dutch" },
+    { value: "en", title: "English" },
+    { value: "fi", title: "Finnish" },
+    { value: "fr", title: "French" },
+    { value: "de", title: "German" },
+    { value: "el", title: "Greek" },
+    { value: "gu", title: "Gujarati" },
+    { value: "he", title: "Hebrew" },
+    { value: "hi", title: "Hindi" },
+    { value: "hu", title: "Hungarian" },
+    { value: "id", title: "Indonesian" },
+    { value: "ga", title: "Irish" },
+    { value: "it", title: "Italian" },
+    { value: "ja", title: "Japanese" },
+    { value: "kn", title: "Kannada" },
+    { value: "ko", title: "Korean" },
+    { value: "mr", title: "Marathi" },
+    { value: "no", title: "Norwegian" },
+    { value: "fa", title: "Persian" },
+    { value: "pl", title: "Polish" },
+    { value: "pt", title: "Portuguese" },
+    { value: "ro", title: "Romanian" },
+    { value: "ru", title: "Russian" },
+    { value: "sr", title: "Serbian" },
+    { value: "sk", title: "Slovak" },
+    { value: "es", title: "Spanish" },
+    { value: "sv", title: "Swedish" },
+    { value: "ta", title: "Tamil" },
+    { value: "th", title: "Thai" },
+    { value: "tr", title: "Turkish" },
+    { value: "uk", title: "Ukrainian" },
+    { value: "ur", title: "Urdu" },
+    { value: "vi", title: "Vietnamese" },
+  ]);
+});

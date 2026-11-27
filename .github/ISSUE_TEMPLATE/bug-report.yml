@@ -1,0 +1,75 @@
+name: Bug report
+description: A command opens the wrong search, shows an error, or does not work as the Store README describes.
+labels: [bug]
+body:
+  - type: dropdown
+    id: command
+    attributes:
+      label: Command
+      options:
+        - Advanced Search
+        - Quick Search
+        - Both
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: What you did
+      description: For Advanced Search, the fields you filled and the action you chose. For Quick Search, the search query you typed.
+      placeholder: |
+        1. Run Advanced Search
+        2. Type `cats` in All of these words and `X` in From these accounts
+        3. Press ⌘↵
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What happened
+      description: The posts x.com showed, or the error Raycast showed. A screenshot helps.
+    validations:
+      required: true
+  - type: input
+    id: search-link
+    attributes:
+      label: Search link
+      description: In Advanced Search, use Copy Search Link and paste it here. Leave it empty if the command did not get that far.
+      placeholder: https://x.com/search?q=…
+  - type: dropdown
+    id: results-tab
+    attributes:
+      label: Results tab
+      description: The results tab the search opened, or should have opened.
+      options:
+        - Top
+        - Latest
+        - People
+        - Media
+        - Lists
+        - Not sure
+  - type: input
+    id: preferred-browser
+    attributes:
+      label: Preferred browser
+      description: The browser set in the extension preferences. Leave it empty if none is set.
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      options:
+        - macOS
+        - Windows
+    validations:
+      required: true
+  - type: input
+    id: raycast-version
+    attributes:
+      label: Raycast version
+      description: Shown in Raycast's About window.

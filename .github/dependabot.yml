@@ -1,0 +1,33 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directories:
+      - /
+      - /extension
+    schedule:
+      interval: monthly
+    groups:
+      # A separate pull request, so a failing Raycast update does not hold back the rest.
+      raycast:
+        patterns: ["@raycast/*"]
+      npm:
+        patterns: ["*"]
+    ignore:
+      # @raycast/api pins exact versions of these. Change them by hand when its pin changes.
+      - dependency-name: "@types/node"
+      - dependency-name: "@types/react"
+      # Follows the peer range of @raycast/eslint-config. Loosen it when that range does.
+      - dependency-name: typescript
+        update-types:
+          - version-update:semver-minor
+          - version-update:semver-major
+      - dependency-name: eslint
+        update-types:
+          - version-update:semver-major
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    groups:
+      actions:
+        patterns: ["*"]

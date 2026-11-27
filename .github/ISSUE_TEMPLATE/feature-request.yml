@@ -1,0 +1,34 @@
+name: Feature request
+description: Propose a new feature or a change in behavior, before writing code.
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Agreeing on the idea first keeps a pull request from stalling. Read [Discuss ideas first](https://github.com/raulgg/raycast-extension-x-search/blob/main/CONTRIBUTING.md#discuss-ideas-first) for why. Small bug fixes do not need an issue.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What you want to do
+      description: The search you want to run, and what stops you today.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What you propose
+      description: The fields, actions, preferences, or commands you would add or change.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: What you tried instead
+      description: For example, typing the search query in Quick Search.
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Scope
+      options:
+        - label: The search still opens on x.com. X Search does not call the X API or list posts in Raycast.
+          required: true

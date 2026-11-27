@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Contributing guide
+    url: https://github.com/raulgg/raycast-extension-x-search/blob/main/CONTRIBUTING.md
+    about: Where to report bugs, propose ideas, and send code.

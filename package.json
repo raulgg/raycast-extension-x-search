@@ -1,0 +1,28 @@
+{
+  "name": "x-search-development",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "postinstall": "npm install --prefix extension",
+    "dev": "npm --prefix extension run dev",
+    "build": "npm --prefix extension run build",
+    "publish": "npm --prefix extension run publish --",
+    "pull-contributions": "cd extension && npx @raycast/api@latest pull-contributions",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:unit": "vitest run --project unit",
+    "quality-check": "npm run format:check && npm run build && npm run type-check && npm test && npm run lint",
+    "type-check": "tsc --noEmit && npm --prefix extension run type-check",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint --config eslint.config.js tests extension/src && npm --prefix extension run lint",
+    "lint:fix": "eslint --config eslint.config.js --fix tests extension/src && npm --prefix extension run lint:fix"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.5",
+    "eslint": "^10.15.0",
+    "prettier": "^3.10.1",
+    "typescript": "^6.0.3",
+    "vitest": "^5.1.1"
+  }
+}
