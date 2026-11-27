@@ -8,8 +8,12 @@ export type AdvancedSearchItemProps = ReturnType<typeof useForm<AdvancedSearchVa
 
 type SectionProps = { itemProps: AdvancedSearchItemProps };
 
-function exampleProps(sample: string, meaning: string): { placeholder: string; info: string } {
-  return { placeholder: sample, info: `Example: ${sample} · ${meaning}` };
+const ACCOUNTS_HINT = "Separate accounts with spaces or commas. The @ is optional.";
+const HASHTAGS_HINT = "Separate hashtags with spaces or commas. The # is optional.";
+
+function exampleProps(sample: string, meaning: string, hint?: string): { placeholder: string; info: string } {
+  const example = `Example: ${sample} · ${meaning}`;
+  return { placeholder: sample, info: hint === undefined ? example : `${example}. ${hint}` };
 }
 
 const REPLIES_FILTER_TITLES: Record<FilterMode, string> = {
@@ -72,7 +76,7 @@ export function WordsSection({ itemProps }: SectionProps) {
       />
       <Form.TextField
         title="These hashtags"
-        {...exampleProps("#ThrowbackThursday", "contains the hashtag #ThrowbackThursday")}
+        {...exampleProps("#ThrowbackThursday", "contains the hashtag #ThrowbackThursday", HASHTAGS_HINT)}
         {...itemProps.hashtags}
       />
       <Form.Dropdown title="Language" info="Any language leaves this out" {...itemProps.language}>
@@ -89,15 +93,19 @@ export function AccountsSection({ itemProps }: SectionProps) {
     <>
       <Form.Separator />
       <Form.Description title="Accounts" text="Accounts that sent, received, or are mentioned." />
-      <Form.TextField title="From these accounts" {...exampleProps("@X", "sent from @X")} {...itemProps.fromAccounts} />
+      <Form.TextField
+        title="From these accounts"
+        {...exampleProps("@X", "sent from @X", ACCOUNTS_HINT)}
+        {...itemProps.fromAccounts}
+      />
       <Form.TextField
         title="To these accounts"
-        {...exampleProps("@X", "sent in reply to @X")}
+        {...exampleProps("@X", "sent in reply to @X", ACCOUNTS_HINT)}
         {...itemProps.toAccounts}
       />
       <Form.TextField
         title="Mentioning these accounts"
-        {...exampleProps("@SFBART @Caltrain", "mentions @SFBART or mentions @Caltrain")}
+        {...exampleProps("@SFBART @Caltrain", "mentions @SFBART or mentions @Caltrain", ACCOUNTS_HINT)}
         {...itemProps.mentionedAccounts}
       />
     </>
